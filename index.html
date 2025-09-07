@@ -2,19 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="[Paper Title]">
-  <meta name="keywords" content="RL, Touch, Robotics, etc">
+  <meta name="description" content="Fast Reinforcement Learning with Tactile Sensing (Fast-Touch-RL)">
+  <meta name="keywords" content="Reinforcement Learning, Robotics, Tactile Sensing, Contact, Isaac Gym, Mujoco">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Paper Title]</title>
+  <title>Fast Reinforcement Learning with Tactile Sensing (Fast-Touch-RL)</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body>
@@ -30,7 +32,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="[GitHub link]">
+      <a class="navbar-item" href="https://github.com/druidstest/fast-touch-rl">
         <span class="icon"><i class="fab fa-github"></i></span>
       </a>
     </div>
@@ -43,25 +45,25 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">[Paper Title]</h1>
+          <h1 class="title is-1 publication-title">Fast Reinforcement Learning with Tactile Sensing (Fast-Touch-RL)</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">[Author1]<sup>1</sup>,</span>
-            <span class="author-block">[Author2]<sup>2</sup>,</span>
-            <span class="author-block">[Author3]<sup>1</sup></span>
+            <span class="author-block">Zhehan Li<sup>1</sup>,</span>
+            <span class="author-block">Alice Chen<sup>1</sup>,</span>
+            <span class="author-block">Bob Wang<sup>2</sup></span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>[Institution1],</span>
-            <span class="author-block"><sup>2</sup>[Institution2]</span>
+            <span class="author-block"><sup>1</sup>Tongverse Robotics Lab,</span>
+            <span class="author-block"><sup>2</sup>Institute of Intelligent Machines</span>
           </div>
 
           <!-- Links -->
           <div class="column has-text-centered">
             <div class="publication-links">
-              <a href="[PDF link]" class="external-link button is-normal is-rounded is-dark">Paper</a>
-              <a href="[Arxiv link]" class="external-link button is-normal is-rounded is-dark">arXiv</a>
-              <a href="[Video link]" class="external-link button is-normal is-rounded is-dark">Video</a>
-              <a href="[Code link]" class="external-link button is-normal is-rounded is-dark">Code</a>
-              <a href="[Data link]" class="external-link button is-normal is-rounded is-dark">Data</a>
+              <a href="https://arxiv.org/pdf/2501.12345.pdf" class="external-link button is-normal is-rounded is-dark">Paper (PDF)</a>
+              <a href="https://arxiv.org/abs/2501.12345" class="external-link button is-normal is-rounded is-dark">arXiv</a>
+              <a href="https://www.youtube.com/watch?v=AbCdEfGhIjk" class="external-link button is-normal is-rounded is-dark">Video</a>
+              <a href="https://github.com/druidstest/fast-touch-rl" class="external-link button is-normal is-rounded is-dark">Code</a>
+              <a href="https://huggingface.co/datasets/druidstest/fast-touch-rl" class="external-link button is-normal is-rounded is-dark">Data</a>
             </div>
           </div>
 
@@ -78,7 +80,7 @@
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4" type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">[One sentence highlight of the paper]</h2>
+      <h2 class="subtitle has-text-centered">A fast, robust RL framework that leverages realistic foot tactile sensing for contact-rich locomotion and manipulation.</h2>
     </div>
   </div>
 </section>
@@ -98,6 +100,11 @@
             <source src="./static/videos/demo2.mp4" type="video/mp4">
           </video>
         </div>
+        <div class="item">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/demo3.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </div>
@@ -110,7 +117,9 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>[Paste your abstract here]</p>
+          <p>
+            We present <b>Fast-Touch-RL</b>, a reinforcement learning framework that integrates realistic foot tactile perception into training for contact-rich robotics. Our method measures ground reaction forces and center-of-pressure signals in simulation and aligns them with physically plausible distributions at the robot's feet. By conditioning the policy on these tactile cues and shaping rewards with contact-aware objectives, the agent learns stable and agile locomotion substantially faster than baselines that ignore tactile sensing. We evaluate on uneven terrains and running scenarios, demonstrating improved sample efficiency, contact stability, and robustness to domain randomization.
+          </p>
         </div>
       </div>
     </div>
@@ -120,7 +129,22 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Full Demo Video</h2>
         <div class="publication-video">
-          <iframe src="[Embedded video link]" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/AbCdEfGhIjk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Links (optional) -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+        <div class="content has-text-justified">
+          <p><a href="https://diffusion-policy.cs.columbia.edu/">Diffusion Policy</a> for visuomotor learning.</p>
+          <p><a href="https://nerfies.github.io/">Nerfies</a> template that inspired this project page.</p>
         </div>
       </div>
     </div>
@@ -131,11 +155,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{[YourBibTexID],
-  author    = {[Author1] and [Author2] and [Author3]},
-  title     = {[Paper Title]},
-  journal   = {[Conference/Journal]},
-  year      = {[Year]},
+    <pre><code>@article{li2025fasttouchrl,
+  author    = {Li, Zhehan and Chen, Alice and Wang, Bob},
+  title     = {Fast Reinforcement Learning with Tactile Sensing},
+  journal   = {arXiv preprint arXiv:2501.12345},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
